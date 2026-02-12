@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 100% 97%;
+    --foreground: 230 25% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 18%;
+
+    --primary: 210 80% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 330 70% 85%;
+    --secondary-foreground: 330 40% 30%;
+
+    --muted: 210 40% 93%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 150 60% 80%;
+    --accent-foreground: 150 40% 22%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 210 80% 65%;
+
+    --radius: 1rem;
+
+    --pastel-pink: 330 70% 85%;
+    --pastel-green: 150 60% 80%;
+    --pastel-yellow: 45 90% 85%;
+    --pastel-purple: 270 60% 85%;
+    --pastel-orange: 25 90% 85%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 230 25% 12%;
+    --foreground: 210 40% 95%;
+    --card: 230 25% 15%;
+    --card-foreground: 210 40% 95%;
+    --popover: 230 25% 15%;
+    --popover-foreground: 210 40% 95%;
+    --primary: 210 80% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 330 40% 35%;
+    --secondary-foreground: 330 70% 90%;
+    --muted: 230 20% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 150 40% 30%;
+    --accent-foreground: 150 60% 85%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 230 20% 22%;
+    --input: 230 20% 22%;
+    --ring: 210 80% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+@layer components {
+  .sakura-petal {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: hsl(var(--pastel-pink));
+    border-radius: 50% 0 50% 0;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear forwards;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+}
